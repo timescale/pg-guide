@@ -21,39 +21,36 @@ Understanding PostgreSQL's process model, backend processes, auxiliary processes
 Shared buffers, work memory, maintenance work memory, and how PostgreSQL uses memory.
 
 ### 3. [MVCC and Transactions](03-mvcc-transactions.md)
-Multi-Version Concurrency Control, transaction isolation levels, and visibility.
+Multi-Version Concurrency Control, transaction isolation levels, visibility, VACUUM, autovacuum, and bloat management.
 
-### 4. [VACUUM and Bloat](04-vacuum-bloat.md)
-Autovacuum, dead tuple management, bloat identification and prevention.
-
-### 5. [WAL (Write-Ahead Log)](05-wal.md)
+### 4. [WAL (Write-Ahead Log)](04-wal.md)
 Write-Ahead Logging, checkpoints, durability, and crash recovery.
 
-### 6. [Replication](06-replication.md)
+### 5. [Replication](05-replication.md)
 Streaming replication, replication slots, synchronous vs asynchronous replication, failover concepts.
 
-### 7. [Tablespaces and Storage](07-tablespaces-storage.md)
+### 6. [Tablespaces and Storage](06-tablespaces-storage.md)
 Physical layout, TOAST, fillfactor, and storage management.
 
-### 8. [Critical Monitoring](08-monitoring.md)
+### 7. [Critical Monitoring](07-monitoring.md)
 Essential views, key metrics, and logging configuration for production operations.
 
-### 9. [Backup and Recovery](09-backup-recovery.md)
+### 8. [Backup and Recovery](08-backup-recovery.md)
 Backup strategies, PITR, modern tools, and disaster recovery concepts.
 
-### 10. [Upgrade and Maintenance](10-upgrade-maintenance.md)
+### 9. [Upgrade and Maintenance](09-upgrade-maintenance.md)
 pg_upgrade, logical replication for upgrades, extension management, and version policies.
 
-### 11. [Configuration and Tuning](11-configuration-tuning.md)
+### 10. [Configuration and Tuning](10-configuration-tuning.md)
 Critical postgresql.conf parameters, authentication, and workload-specific tuning.
 
-### 12. [Common Troubleshooting](12-troubleshooting.md)
-Practical solutions for bloat recovery, replication lag, connection issues, and disk space problems.
+### 11. [Common Troubleshooting](11-troubleshooting.md)
+Practical solutions for replication lag, connection issues, and disk space problems.
 
-### 13. [Operational Security](13-security.md)
+### 12. [Operational Security](12-security.md)
 Roles, privileges, SSL/TLS, audit logging, and row-level security.
 
-### 14. [TimescaleDB Specific](14-timescaledb.md)
+### 13. [TimescaleDB Specific](13-timescaledb.md)
 Hypertables, chunks, compression, continuous aggregates, and operational considerations.
 
 ## How to Use This Guide
