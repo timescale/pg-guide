@@ -30,7 +30,7 @@ Write-Ahead Logging, checkpoints, durability, and crash recovery.
 Streaming replication, replication slots, synchronous vs asynchronous replication, failover concepts.
 
 ### 6. [Tablespaces and Storage](06-tablespaces-storage.md)
-Physical layout, TOAST, fillfactor, and storage management.
+Physical layout, PGDATA directory structure, configuration file management, TOAST, fillfactor, and storage management.
 
 ### 7. [Critical Monitoring](07-monitoring.md)
 Essential views, key metrics, and logging configuration for production operations.
@@ -67,3 +67,9 @@ Start with topics relevant to your current challenges, or read sequentially for 
 ## Contributing
 
 This is a living document. If you find gaps, errors, or have suggestions for improvement, please contribute.
+
+## TODO
+- [ ] expand patroni session into a whole chapter
+
+
+https://pgdog.dev/blog/shard-your-database
