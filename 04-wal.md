@@ -65,7 +65,9 @@ Key points:
 #### WAL Segments
 
 - WAL is stored in **16MB files** called segments (default size)
-  - **Note**: Segment size can be changed using `initdb --wal-segsize` option (PostgreSQL 11+). This must be set during database initialization - cannot be changed later without re-initializing the cluster. Most installations use the default 16MB. See [initdb documentation](https://www.postgresql.org/docs/current/app-initdb.html#APP-INITDB-OPTION-WAL-SEGSIZE).
+
+> [!NOTE]
+> Segment size can be changed using `initdb --wal-segsize` option (PostgreSQL 11+). This must be set during database initialization - cannot be changed later without re-initializing the cluster. Most installations use the default 16MB. See [initdb documentation](https://www.postgresql.org/docs/current/app-initdb.html#APP-INITDB-OPTION-WAL-SEGSIZE).
 - Located in `pg_wal/` directory (formerly `pg_xlog/` in PG < 10)
 - Files named with 24-character hexadecimal names
 - PostgreSQL recycles old WAL files instead of deleting them

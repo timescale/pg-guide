@@ -235,7 +235,8 @@ LIMIT 10;
 
 ### Check Transaction ID Age (xid wraparound risk)
 
-**⚠️ CRITICAL**: Transaction ID wraparound is one of the most severe operational issues in PostgreSQL. Understanding it is essential.
+> [!CAUTION]
+> Transaction ID wraparound is one of the most severe operational issues in PostgreSQL. Understanding it is essential.
 
 #### What is xid wraparound?
 

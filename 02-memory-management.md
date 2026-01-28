@@ -80,7 +80,8 @@ Maximum potential memory = work_mem × operations_per_query × parallel_workers 
 (Note: hash operations can use up to hash_mem_multiplier × work_mem, default 2.0)
 ```
 
-**Important**: This is the **worst-case scenario**. Actual usage depends on data size - operations use memory on-demand **up to** their work_mem limit. However, planning for worst-case is critical to avoid OOM kills.
+> [!IMPORTANT]
+> This is the **worst-case scenario**. Actual usage depends on data size - operations use memory on-demand **up to** their work_mem limit. However, planning for worst-case is critical to avoid OOM kills.
 
 **Example (worst-case)**:
 - work_mem = 128MB

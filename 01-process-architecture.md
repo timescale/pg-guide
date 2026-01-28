@@ -62,7 +62,8 @@ Since each connection = a process:
 
 ## How to monitor
 
-> **TIP**: For a visual, interactive alternative to the SQL queries below, check out **[pg_activity](https://github.com/dalibo/pg_activity)** - a top-like monitoring tool that shows real-time connection and query activity in your terminal.
+> [!TIP]
+> For a visual, interactive alternative to the SQL queries below, check out **[pg_activity](https://github.com/dalibo/pg_activity)** - a top-like monitoring tool that shows real-time connection and query activity in your terminal.
 
 ### View Active Connections
 Shows all non-idle backend processes with their queries. Useful for identifying what's currently running.
@@ -146,10 +147,10 @@ FROM pg_stat_activity;
                  167 |             200 |                  3 |                 197 |    83.50
 ```
 
+> [!IMPORTANT]
+> `superuser_reserved_connections` (default: 3) are reserved for superuser emergency access. Normal users will get "too many clients" error when reaching `non_superuser_limit` (197 in example above). This reservation ensures DBAs can always connect to fix issues, even when the database is "full".
+
 **What to look for:**
-- **IMPORTANT**: `superuser_reserved_connections` (default: 3) are reserved for superuser emergency access
-- Normal users will get "too many clients" error when reaching `non_superuser_limit` (197 in example above)
-- This reservation ensures DBAs can always connect to fix issues, even when the database is "full"
 - `pct_used > 80%`: Time to implement connection pooling or increase max_connections
 - `pct_used > 95%`: Critical - new connections will fail soon for non-superusers
 - Consistent high usage: May indicate need for connection pooling, or simply high legitimate load

@@ -111,7 +111,8 @@ synchronous_standby_names = 'standby1'     # Which standbys to wait for
 | `on` | Standby writes WAL to disk | Zero data loss | None (on sync standby) |
 | `remote_apply` | Standby applies WAL | Read-your-writes consistency | None |
 
-**Important:** `synchronous_commit = off` is dangerous even without replication - disables local fsync waiting. Use with extreme caution.
+> [!WARNING]
+> `synchronous_commit = off` is dangerous even without replication - disables local fsync waiting. Use with extreme caution.
 
 #### Failover and Promotion
 

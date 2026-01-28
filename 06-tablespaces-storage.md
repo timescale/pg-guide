@@ -4,16 +4,15 @@
 
 PostgreSQL's storage layer organizes data files on disk in a structured way. Understanding this physical layout helps with capacity planning, performance tuning, and troubleshooting storage issues.
 
-**Important terminology:**
-
-In PostgreSQL documentation, **"cluster"** refers to a single PostgreSQL instance (one postmaster process) managing one PGDATA directory that can contain multiple databases. This is different from high-availability "cluster" terminology:
-
-- **PostgreSQL cluster** = One instance, one PGDATA directory, multiple databases
-  - Example: One PostgreSQL server with databases `app_db`, `reporting_db`, `test_db`
-- **HA cluster** (Patroni, Kubernetes, etc.) = Multiple PostgreSQL instances (primary + standbys)
-  - Example: 3-node Patroni cluster with 1 primary + 2 standbys
-
-Throughout this chapter, "cluster" means **PostgreSQL cluster** (single instance), not HA cluster.
+> [!IMPORTANT]
+> In PostgreSQL documentation, **"cluster"** refers to a single PostgreSQL instance (one postmaster process) managing one PGDATA directory that can contain multiple databases. This is different from high-availability "cluster" terminology:
+>
+> - **PostgreSQL cluster** = One instance, one PGDATA directory, multiple databases
+>   - Example: One PostgreSQL server with databases `app_db`, `reporting_db`, `test_db`
+> - **HA cluster** (Patroni, Kubernetes, etc.) = Multiple PostgreSQL instances (primary + standbys)
+>   - Example: 3-node Patroni cluster with 1 primary + 2 standbys
+>
+> Throughout this chapter, "cluster" means **PostgreSQL cluster** (single instance), not HA cluster.
 
 ### Core Concepts
 
@@ -42,7 +41,8 @@ PGDATA/
 └── postmaster.pid     # PID file (present when server running)
 ```
 
-**Note:** Configuration files (`postgresql.conf`, `pg_hba.conf`) are typically located in PGDATA but can be moved to external locations if needed. See [Chapter 10: Configuration and Tuning](10-configuration-tuning.md) for details on configuration file management, including external config files and include directives.
+> [!NOTE]
+> Configuration files (`postgresql.conf`, `pg_hba.conf`) are typically located in PGDATA but can be moved to external locations if needed. See [Chapter 10: Configuration and Tuning](10-configuration-tuning.md) for details on configuration file management, including external config files and include directives.
 
 #### Database Files (base/)
 
@@ -678,7 +678,8 @@ ALTER DATABASE mydb SET TABLESPACE new_fast_storage;
 DROP TABLESPACE old_slow_storage;
 ```
 
-**Note**: Moving tablespaces requires exclusive locks and can take time for large tables.
+> [!NOTE]
+> Moving tablespaces requires exclusive locks and can take time for large tables.
 
 ## Additional Resources
 
